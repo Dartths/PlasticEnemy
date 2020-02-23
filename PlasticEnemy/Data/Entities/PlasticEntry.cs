@@ -9,12 +9,14 @@ namespace PlasticEnemy.Data.Entities
     {
         public Guid PlasticEntryId { get; set; }
 
+        //ProfileId
+
         public DateTime Date { get; set; }
 
-        public string PlasticTypeId { get; set; }
+        //PlasticTypeId
 
         public int Size { get; set; }
 
-        public string ActionID { get; set; }
+        //ActionID
     }
 }

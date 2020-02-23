@@ -6,6 +6,8 @@ namespace PlasticEnemy.Data.Entities
     {
         public Guid ProfileId { get; set; }
 
+        //UserId
+
         public string FirstName { get; set; }
 
         public string Surname { get; set; }
@@ -18,6 +20,6 @@ namespace PlasticEnemy.Data.Entities
 
         public DateTime DOB { get; set; }
 
-        public string Goal { get; set; }
+        //GoalID
     }
 }
