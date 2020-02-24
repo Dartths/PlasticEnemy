@@ -7,7 +7,8 @@ namespace PlasticEnemy.Data.Entities
 {
     public class PlasticType
     {
-        public Guid PlasticTypeId { get; set; }
+        //columns
+        public int PlasticTypeId { get; set; }
 
         public string ItemName { get; set; }
     }

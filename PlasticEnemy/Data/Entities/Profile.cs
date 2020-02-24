@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PlasticEnemy.Data.Entities
 {
     public class Profile
     {
+        //columns
         public Guid ProfileId { get; set; }
 
-        //UserId
+        public Guid UserId { get; set; }
 
         public string FirstName { get; set; }
 
@@ -20,6 +22,14 @@ namespace PlasticEnemy.Data.Entities
 
         public DateTime DOB { get; set; }
 
-        //GoalID
+        public int GoalId { get; set; }
+
+        //links to other tables using corresponding IDs one-to-one relationships
+        public virtual User User { get; set; }
+
+        public virtual Goal Goal { get; set; }
+
+        //links to other tables with one-to-many relationships
+        public virtual List<PlasticEntry> PlasticEntries { get; set; }
     }
 }

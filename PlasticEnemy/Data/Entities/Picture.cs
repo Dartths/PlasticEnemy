@@ -7,10 +7,11 @@ namespace PlasticEnemy.Data.Entities
 {
     public class Picture
     {
-        public Guid PitureId { get; set; }
+        //columns
+        public int PitureId { get; set; }
 
-        public string PictureType { get; set; }
+        public bool PictureType { get; set; }
 
-        //Image
+        public string PictureLocation { get; set; }
     }
 }

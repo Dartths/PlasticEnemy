@@ -7,7 +7,8 @@ namespace PlasticEnemy.Data.Entities
 {
     public class Goal
     {
-        public Guid GoalID { get; set; }
+        //columns
+        public int GoalID { get; set; }
 
         public string GoalName { get; set; }
     }

@@ -7,16 +7,25 @@ namespace PlasticEnemy.Data.Entities
 {
     public class PlasticEntry
     {
-        public Guid PlasticEntryId { get; set; }
+        //columns
+        public int PlasticEntryId { get; set; }
 
-        //ProfileId
+        public Guid ProfileId { get; set; }
 
         public DateTime Date { get; set; }
 
-        //PlasticTypeId
+        public int PlasticTypeId { get; set; }
 
-        public int Size { get; set; }
+        public string Size { get; set; }
 
-        //ActionID
+        public int ActionId { get; set; }
+
+        //links to other tables using corresponding IDs one-to-one relationships
+        public virtual Profile Profile { get; set; }
+
+        public virtual PlasticType PlasticType { get; set; }
+
+        public virtual Action Action { get; set; }
+
     }
 }
