@@ -8,7 +8,7 @@ namespace PlasticEnemy.Data.Entities
     public class Picture
     {
         //columns
-        public int PitureId { get; set; }
+        public int PictureId { get; set; }
 
         public bool PictureType { get; set; }
 
