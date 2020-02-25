@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PlasticEnemy.Data;
 
 namespace PlasticEnemy.Data.Migrations
 {
     [DbContext(typeof(PEContext))]
-    partial class PEContextModelSnapshot : ModelSnapshot
+    [Migration("20200224225517_CreateBaseTables")]
+    partial class CreateBaseTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
