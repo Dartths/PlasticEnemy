@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using PlasticEnemy.Data.Entities;
 
-namespace PlasticEnemy.Data.Repositories
+namespace PlasticEnemy.Features.Users
 {
-    public interface IUserRepository
+    public interface IUsersRepository
     {
         Task<User> CreateUser(User user);
         Task<User> GetUser(Guid userId);

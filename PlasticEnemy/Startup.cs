@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PlasticEnemy.Data;
-using PlasticEnemy.Data.Repositories;
+using PlasticEnemy.Features.Users;
 
 namespace PlasticEnemy
 {
@@ -34,7 +34,7 @@ namespace PlasticEnemy
 
         private void AddRepositories(IServiceCollection services)
         {
-            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUsersRepository, UsersRepository>();
         }
 
         // This method gets called by the runt;me. Use this method to configure the HTTP request pipeline.

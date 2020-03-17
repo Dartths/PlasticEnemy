@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PlasticEnemy.Data.Repositories
+namespace PlasticEnemy.Features.Users
 {
-    public class UserRepository : IUserRepository
+    public class UsersRepository : IUsersRepository
     {
         private readonly DbContext _peContext;
 
-        public UserRepository(DbContext pEContext)
+        public UsersRepository(DbContext pEContext)
         {
             _peContext = pEContext ?? throw new ArgumentNullException(nameof(pEContext));
         }

@@ -1,6 +1,6 @@
 using System;
 
-namespace PlasticEnemy
+namespace PlasticEnemy.Features.WeatherForcast
 {
     public class WeatherForecast
     {
