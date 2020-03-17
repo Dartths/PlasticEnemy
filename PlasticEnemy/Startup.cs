@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PlasticEnemy.Data;
+using PlasticEnemy.Data.Repositories;
 
 namespace PlasticEnemy
 {
@@ -28,9 +29,15 @@ namespace PlasticEnemy
             //services.AddOpenApiDocument(document =>
             //    document.PostProcess = d => d.Info.Title = "Users API");
 
+            AddRepositories(services);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        private void AddRepositories(IServiceCollection services)
+        {
+            services.AddScoped<IUserRepository, UserRepository>();
+        }
+
+        // This method gets called by the runt;me. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
