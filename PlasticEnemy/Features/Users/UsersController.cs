@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PlasticEnemy.Data.Entities;
 
 namespace PlasticEnemy.Features.Users
 {
@@ -11,6 +12,15 @@ namespace PlasticEnemy.Features.Users
     [ApiController]
     public class UsersController : ControllerBase
     {
+
+        private readonly IUsersManager _usersManager;
+
+        public UsersController(IUsersManager usersManager)
+        {
+            _usersManager = usersManager ?? throw new ArgumentNullException(nameof(usersManager));
+        }
+
+
         // GET: api/User
         [HttpGet]
         public IEnumerable<string> Get()
@@ -27,8 +37,10 @@ namespace PlasticEnemy.Features.Users
 
         // POST: api/User
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<User> Post([FromBody] User user)
         {
+            return await _usersManager.CreateUser(user);
+
         }
 
         // PUT: api/User/5

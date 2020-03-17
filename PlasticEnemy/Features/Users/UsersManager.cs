@@ -6,11 +6,18 @@ using PlasticEnemy.Data.Entities;
 
 namespace PlasticEnemy.Features.Users
 {
-    public class UsersManager
+    public class UsersManager : IUsersManager
     {
-        public async Task<User> CreateUser()
+        private readonly IUsersRepository _usersRepository;
+
+        public UsersManager(IUsersRepository usersRepository)
         {
-            throw new NotImplementedException();
+            _usersRepository = usersRepository ?? throw new ArgumentNullException(nameof(usersRepository));
+        }
+
+        public async Task<User> CreateUser(User user)
+        {
+            return await _usersRepository.CreateUser(user);
         }
     }
 }
